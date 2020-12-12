@@ -5,7 +5,7 @@
 
 
 ## Overview  
-In this project you'll create two ROS packages inside your `catkin_ws/src`: the `drive_bot` and the `ball_chaser` which will be used in Gazebo for all your upcoming projects in the [Udacity Robotics Software Engineer Nanodegree Program](https://www.udacity.com/course/robotics-software-engineer--nd209). Here are the steps to design the robot, house it inside your world, and program it to chase white-colored balls:  
+In this project I've created two ROS packages inside your `catkin_ws/src`: the `drive_bot` and the `ball_chaser` to be used in Gazebo for all projects in the [Udacity Robotics Software Engineer Nanodegree Program](https://www.udacity.com/course/robotics-software-engineer--nd209). Here are the steps to design the robot, house it inside your world, and program it to chase white-colored balls:  
 1. `drive_bot`:  
 * Create a `my_robot` ROS package to hold your robot, the white ball, and the world.
 * Design a differential drive robot with the Unified Robot Description Format. Add two sensors to your robot: a lidar and a camera. Add Gazebo plugins for your robot’s differential drive, lidar, and camera. The robot you design should be significantly different from the one presented in the project lesson. Implement significant changes such as adjusting the color, wheel radius, and chassis dimensions. Or completely redesign the robot model! After all you want to impress your future employers :-D
@@ -52,37 +52,29 @@ Directory Structure
 │   │   │   │   ├── DriveToTarget.srv
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
-│   │   ├── my_gokart                          # my_gokart package        
-│   │   │   ├── launch                         # launch folder for launch files   
-│   │   │   │   ├── gokart_description.launch
-│   │   │   │   ├── world.launch
-│   │   │   ├── urdf                           # urdf folder for xarco files
-│   │   │   │   ├── my_gokart.gazebo
-│   │   │   │   ├── my_gokart.xacro
-│   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
-│   │   │   ├── CMakeLists.txt                 # compiler instructions
-│   │   │   ├── package.xml                    # package info
 │   │   ├── my_robot                           # my_robot package        
 │   │   │   ├── launch                         # launch folder for launch files   
 │   │   │   │   ├── robot_description.launch
 │   │   │   │   ├── world.launch
 │   │   │   ├── meshes                         # meshes folder for sensors
 │   │   │   │   ├── hokuyo.dae
+│   │   │   ├── meshes_2                       # meshe stl's for robot construction
+│   │   │   │   ├── ballance_sphere.stl
+│   │   │   │   ├── left_wheel.stl
+│   │   │   │   ├── right_wheel.stl
+│   │   │   │   ├── robot_body_5.stl
 │   │   │   ├── urdf                           # urdf folder for xarco files
 │   │   │   │   ├── my_robot.gazebo
 │   │   │   │   ├── my_robot.xacro
 │   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── paulchoate.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
 ├── videos                                     # Video files
-│   ├── Term1-Project2-Go-Chase-It-Demo.gif    # Demo video
+│   ├── Go-Chase-It-Demo.gif                   # Demo video
 ```
 - [Term1-Project2-Go-Chase-It-Demo.gif](/videos/Term1-Project2-Go-Chase-It-Demo.gif): A demo video for successful run.  
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
@@ -103,7 +95,7 @@ Directory Structure
 * Clone this repository
 * Open the repository and make  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/Go-Chase-It/catkin_ws/
 catkin_make
 ```
 * Launch my_robot/my_gokart in Gazebo to load both the world and plugins  
