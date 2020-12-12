@@ -73,18 +73,14 @@ Directory Structure
 ├── my_ball                                    # Model files 
 │   ├── model.config
 │   ├── model.sdf
-├── videos                                     # Video files
-│   ├── Go-Chase-It-Demo.gif                   # Demo video
-```
-- [Term1-Project2-Go-Chase-It-Demo.gif](/videos/Term1-Project2-Go-Chase-It-Demo.gif): A demo video for successful run.  
+```  
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
 - [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.  
-- [gokart_description.launch](/catkin_ws/src/my_gokart/launch/gokart_description.launch): Create gokart model in Gazebo world.  
+- [robot_description.launch](/catkin_ws/src/my_gokart/launch/gokart_description.launch): Create gokart model in Gazebo world.  
 - [world.launch](/catkin_ws/src/my_gokart/launch/world.launch): Launch my_gokart mode in Gazebo world with building and plugins.  
-- [my_gokart.gazebo](/catkin_ws/src/my_gokart/urdf/my_gokart.gazebo): Define my_gokart URDF model plugins.  
-- [my_gokart.xacro](/catkin_ws/src/my_gokart/urdf/my_gokart.xacro): Define my_gokart URDF model.  
-- [empty.world](/catkin_ws/src/my_gokart/worlds/empty.world): Gazebo world file that includes nothing.  
-- [myoffice.world](/catkin_ws/src/my_gokart/worlds/myoffice.world): Gazebo world file that includes the models.  
+- [my_robot.gazebo](/catkin_ws/src/my_gokart/urdf/my_robot.gazebo): Define my_gokart URDF model plugins.  
+- [my_robot.xacro](/catkin_ws/src/my_gokart/urdf/my_robot.xacro): Define my_gokart URDF model.  
+- [paulchoate.world](/catkin_ws/src/my_gokart/worlds/paulchoate.world): Gazebo world file that includes the models.  
 - [CMakeLists.txt](/catkin_ws/src/my_gokart/CMakeLists.txt): File to link the C++ code to libraries.  
 - [robot_description.launch](/catkin_ws/src/my_robot/launch/robot_description.launch): Create robot model in Gazebo world.  
 - [hokuyo.dae](/catkin_ws/src/my_robot/meshes/hokuyo.dae): Hokuyo LiDAR sensor mesh model.  
@@ -95,26 +91,22 @@ Directory Structure
 * Clone this repository
 * Open the repository and make  
 ```
-cd /home/workspace/Go-Chase-It/catkin_ws/
+cd /home/workspace/Go_Chase_It/catkin_ws/
 catkin_make
 ```
-* Launch my_robot/my_gokart in Gazebo to load both the world and plugins  
+* Launch my_robot/my_robot in Gazebo to load both the world and plugins  
 ```
 roslaunch my_robot world.launch
-```  
-or  
-```
-roslaunch my_gokart world.launch
-```  
+```    
 * Launch ball_chaser and process_image nodes  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/Go_Chase_It/catkin_ws/
 source devel/setup.bash
 roslaunch ball_chaser ball_chaser.launch
 ```  
 * Visualize  
 ```
-cd /home/workspace/RoboND-Term1-P2-Go-Chase-It/catkin_ws/
+cd /home/workspace/Go_Chase_It/catkin_ws/
 source devel/setup.bash
 rosrun rqt_image_view rqt_image_view  
 ```  
